@@ -1,4 +1,6 @@
 # PrecisionFarming
-Autonomous precision farming Demo
+Autonomous precision farming assignment
+
+Mechatronic Systems Engineering - FH Dortmund
 
 Members : Furkan Ali Yurdakul : Bruno Hyska : Ian Murnane : Elbek Bakiev : Zaur Qurbanli
