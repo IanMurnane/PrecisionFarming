@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://giaofjvcj5h5"]
+
+[ext_resource type="PackedScene" uid="uid://26lk8xs8jeas" path="res://Vehicle Prototype.glb" id="1_3sxco"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qlest"]
+vertices = PackedVector3Array(-6.4, 0.52, -7.43, -5.6, 0.52, -7.43, -5.6, 0.52, -7.51, -5.51, 0.52, -7.6, -5.43, 0.52, -7.6, -5.43, 0.52, -8.4, -6.4, 0.52, -7.43, -5.6, 0.52, -7.51, -5.58, 0.52, -7.55, -5.58, 0.52, -7.55, -5.51, 0.52, -7.6, -5.43, 0.52, -8.4, -6.39, 0.52, -8.4, -6.4, 0.52, -7.43, -5.43, 0.52, -7.6, -0.57, 0.52, -7.6, -0.57, 0.52, -8.4, -5.43, 0.52, -8.4, 0.5, 0.52, -7.6, 0.58, 0.52, -7.6, 0.58, 0.52, -8.4, -0.57, 0.52, -8.4, -0.57, 0.52, -7.6, -0.49, 0.52, -7.6, -0.4, 0.52, -7.51, -0.4, 0.52, -7.44, 0.41, 0.52, -7.44, 0.41, 0.52, -7.51, -0.45, 0.52, -7.58, -0.4, 0.52, -7.51, 0.41, 0.52, -7.51, 0.46, 0.52, -7.58, 0.58, 0.52, -8.4, -0.57, 0.52, -8.4, 0.46, 0.52, -7.58, 0.5, 0.52, -7.6, 0.58, 0.52, -8.4, -0.57, 0.52, -8.4, -0.49, 0.52, -7.6, -0.45, 0.52, -7.58, 0.58, 0.52, -7.6, 5.43, 0.52, -7.6, 5.43, 0.52, -8.4, 0.58, 0.52, -8.4, 5.6, 0.52, -7.51, 5.6, 0.52, -7.43, 6.4, 0.52, -7.43, 5.43, 0.52, -8.4, 5.43, 0.52, -7.6, 5.51, 0.52, -7.6, 5.43, 0.52, -8.4, 5.51, 0.52, -7.6, 5.55, 0.52, -7.58, 5.55, 0.52, -7.58, 5.6, 0.52, -7.51, 6.4, 0.52, -7.43, 6.39, 0.52, -8.4, 5.43, 0.52, -8.4, -0.4, 0.52, -0.56, 0.41, 0.52, -0.56, 0.41, 0.52, -7.44, -0.4, 0.52, -7.44, -6.4, 0.52, -0.57, -5.6, 0.52, -0.57, -5.6, 0.52, -7.43, -6.4, 0.52, -7.43, 5.6, 0.52, -0.57, 6.4, 0.52, -0.57, 6.4, 0.52, -7.43, 5.6, 0.52, -7.43, -5.43, 0.52, 0.4, -5.43, 0.52, -0.400001, -5.51, 0.52, -0.400001, -5.6, 0.52, -0.49, -5.6, 0.52, -0.57, -6.4, 0.52, -0.57, -5.58, 0.52, -0.45, -5.6, 0.52, -0.49, -6.4, 0.52, -0.57, -5.43, 0.52, 0.4, -5.51, 0.52, -0.400001, -5.58, 0.52, -0.45, -6.4, 0.52, -0.57, -6.39, 0.52, 0.4, 5.51, 0.52, -0.400001, 5.43, 0.52, -0.400001, 5.43, 0.52, 0.4, 6.4, 0.52, -0.57, 5.6, 0.52, -0.57, 5.6, 0.52, -0.49, 5.55, 0.52, -0.42, 5.51, 0.52, -0.400001, 5.43, 0.52, 0.4, 6.4, 0.52, -0.57, 5.6, 0.52, -0.49, 5.55, 0.52, -0.42, 5.43, 0.52, 0.4, 6.39, 0.52, 0.4, -0.49, 0.52, -0.400001, -0.57, 0.52, -0.400001, -0.57, 0.52, 0.4, 0.58, 0.52, 0.4, 0.58, 0.52, -0.400001, 0.5, 0.52, -0.400001, 0.41, 0.52, -0.49, 0.41, 0.52, -0.56, -0.4, 0.52, -0.56, -0.4, 0.52, -0.49, 0.46, 0.52, -0.42, 0.41, 0.52, -0.49, -0.4, 0.52, -0.49, -0.45, 0.52, -0.42, -0.57, 0.52, 0.4, 0.58, 0.52, 0.4, -0.45, 0.52, -0.42, -0.49, 0.52, -0.400001, -0.57, 0.52, 0.4, 0.58, 0.52, 0.4, 0.5, 0.52, -0.400001, 0.46, 0.52, -0.42, -5.43, 0.52, 0.4, -0.57, 0.52, 0.4, -0.57, 0.52, -0.400001, -5.43, 0.52, -0.400001, 0.58, 0.52, 0.4, 5.43, 0.52, 0.4, 5.43, 0.52, -0.400001, 0.58, 0.52, -0.400001)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(12, 9, 13), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(20, 19, 18), PackedInt32Array(23, 22, 21), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(31, 28, 33), PackedInt32Array(31, 33, 32), PackedInt32Array(36, 35, 34), PackedInt32Array(39, 38, 37), PackedInt32Array(43, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(46, 45, 44), PackedInt32Array(49, 48, 47), PackedInt32Array(52, 51, 50), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(56, 53, 57), PackedInt32Array(61, 60, 58), PackedInt32Array(58, 60, 59), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(69, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(72, 71, 70), PackedInt32Array(75, 74, 73), PackedInt32Array(76, 78, 77), PackedInt32Array(80, 79, 81), PackedInt32Array(81, 79, 83), PackedInt32Array(81, 83, 82), PackedInt32Array(86, 85, 84), PackedInt32Array(89, 88, 87), PackedInt32Array(92, 91, 90), PackedInt32Array(94, 93, 95), PackedInt32Array(95, 93, 97), PackedInt32Array(95, 97, 96), PackedInt32Array(100, 99, 98), PackedInt32Array(103, 102, 101), PackedInt32Array(107, 106, 104), PackedInt32Array(104, 106, 105), PackedInt32Array(109, 108, 110), PackedInt32Array(110, 108, 111), PackedInt32Array(111, 108, 113), PackedInt32Array(111, 113, 112), PackedInt32Array(116, 115, 114), PackedInt32Array(119, 118, 117), PackedInt32Array(123, 122, 120), PackedInt32Array(120, 122, 121), PackedInt32Array(127, 126, 124), PackedInt32Array(124, 126, 125)]
+cell_size = 0.01
+cell_height = 0.01
+agent_radius = 0.1
+agent_max_climb = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfvse"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n8lfs"]
+
+[sub_resource type="Environment" id="Environment_c4x4i"]
+
+[sub_resource type="GDScript" id="GDScript_be7dl"]
+resource_name = "driver2"
+script/source = "extends CharacterBody3D
+
+var movement_speed: float = 1
+var rotation_speed: float = 2
+
+var map : RID
+
+
+@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+
+func _ready():
+	# These values need to be adjusted for the actor's speed and the navigation layout.
+	navigation_agent.path_desired_distance = 0.5
+	navigation_agent.target_desired_distance = 0.5
+
+	# Make sure to not await during _ready.
+	call_deferred(\"actor_setup\")
+
+func actor_setup():
+	# Wait for the first physics frame so the NavigationServer can sync.
+	await get_tree().physics_frame
+#	player = get_node_or_null(\"../../Player\")
+#	root = get_node_or_null(\"../../../Root\")
+	
+	map = NavigationServer3D.agent_get_map(navigation_agent.get_rid())
+	
+	navigation_agent.connect(\"navigation_finished\", set_next_position)
+
+	# Now that the navigation map is no longer empty, set the movement target.
+	set_next_position()
+
+func set_movement_target(movement_target: Vector3):
+	navigation_agent.set_target_position(movement_target)
+	
+func set_next_position():
+	var position : Vector3
+	var closest_point : Vector3
+	# calculate again if the new position is not reachable
+#	while true:
+	#position = Vector3(randf_range(-7, 7), 0.0, randf_range(-9, 9))
+	position = Vector3(-4, 0, -8)
+	
+	closest_point = NavigationServer3D.map_get_closest_point(map, position)
+	print(closest_point)
+	set_movement_target(closest_point)
+	print(navigation_agent.is_target_reachable())
+	print(navigation_agent.is_target_reached())
+
+#		if navigation_agent.is_target_reachable():
+#			break
+	
+#		print(\"not reachable\")
+
+
+func _physics_process(delta):
+	if navigation_agent.is_navigation_finished():
+		return
+
+	var current_agent_position: Vector3 = global_transform.origin
+	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
+
+	var new_velocity: Vector3 = next_path_position - current_agent_position
+	new_velocity = new_velocity.normalized()
+	new_velocity = new_velocity * movement_speed
+
+	set_velocity(new_velocity)
+	move_and_slide()
+	
+	# Face the direction of travel
+	var direction: Vector3 = next_path_position - current_agent_position
+	direction.y = 0
+	direction = direction.normalized()
+	rotation.y = lerp_angle(rotation.y, atan2(-direction.x, -direction.z), delta * rotation_speed)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7x8li"]
+size = Vector3(1, 1, 0.849543)
+
+[node name="Root" type="Node3D"]
+
+[node name="Path" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.548247, 0)
+navigation_mesh = SubResource("NavigationMesh_qlest")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
+transform = Transform3D(12.9681, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_dfvse")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path/StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_n8lfs")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D2"]
+transform = Transform3D(12.9681, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_dfvse")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path/StaticBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_n8lfs")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Path"]
+transform = Transform3D(-2.62268e-08, 0, -1, 0, 1, 0, 0.6, 0, -4.37114e-08, -6, 0, -4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D3"]
+transform = Transform3D(12.9681, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_dfvse")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path/StaticBody3D3/CollisionShape3D"]
+mesh = SubResource("BoxMesh_n8lfs")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Path"]
+transform = Transform3D(-2.62268e-08, 0, -1, 0, 1, 0, 0.6, 0, -4.37114e-08, 6, 0, -4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D4"]
+transform = Transform3D(12.9681, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_dfvse")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path/StaticBody3D4/CollisionShape3D"]
+mesh = SubResource("BoxMesh_n8lfs")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Path"]
+transform = Transform3D(-2.62268e-08, 0, -1, 0, 1, 0, 0.6, 0, -4.37114e-08, 0, 0, -4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D5"]
+transform = Transform3D(12.9681, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_dfvse")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path/StaticBody3D5/CollisionShape3D"]
+mesh = SubResource("BoxMesh_n8lfs")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c4x4i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 7, 0)
+
+[node name="CharacterBody3D2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66169, 0)
+script = SubResource("GDScript_be7dl")
+
+[node name="Vehicle Prototype" parent="CharacterBody3D2" instance=ExtResource("1_3sxco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.548247, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D2"]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.764921, 0.644124, 0, -0.644124, 0.764921, -0.117, -0.102247, 0.465)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D2"]
+transform = Transform3D(0.391611, 0, 0, 0, 0.262408, 0, 0, 0, 0.474883, -0.100863, -0.420787, 0.193669)
+shape = SubResource("BoxShape3D_7x8li")
