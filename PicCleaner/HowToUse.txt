@@ -1,0 +1,16 @@
+Note: Python needs to be installed to use tool.
+
+Install Required Package(s)
+===========================
+Open requirements.txt in PyCharm and click install if it shows a message
+or in a terminal run "pip install -r requirements.txt"
+
+Add Pics
+========
+create a "pics" folder
+place all the images into this folder
+
+To Run
+======
+Just click run in pycharm
+or "python main.py"
