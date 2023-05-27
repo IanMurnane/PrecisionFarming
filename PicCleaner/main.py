@@ -22,6 +22,7 @@ screen_height = num_rows * tile_height
 
 # Create the main Tkinter window
 window = tk.Tk()
+window.title("Pic cleaner - Click to delete - Arrows to change page")
 window.geometry(f"{screen_width}x{screen_height}")
 
 # Keep track of the current page index
