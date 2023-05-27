@@ -14,3 +14,8 @@ To Run
 ======
 Just click run in pycharm
 or "python main.py"
+
+To Use
+======
+Click any images you want to delete
+Use left and right keys to change page
