@@ -13,8 +13,8 @@ tile_width = 224
 tile_height = 224
 
 # Calculate the number of rows and columns
-num_rows = 1
-num_columns = 3
+num_rows = 3
+num_columns = 6
 
 # Calculate the total screen size
 screen_width = num_columns * tile_width
@@ -22,7 +22,7 @@ screen_height = num_rows * tile_height
 
 # Create the main Tkinter window
 window = tk.Tk()
-window.title("Pic cleaner - Click to delete - Arrows to change page")
+window.title("Click to Update Target or Delete - Arrows to change page")
 window.geometry(f"{screen_width}x{screen_height}")
 
 # Keep track of the current page index
@@ -77,10 +77,22 @@ def display_page():
         label.image = photo  # Keep a reference to the image to prevent it from being garbage collected
 
         # Bind the click event to the label
-        label.bind("<Button-1>", lambda event, index=i: delete_image(event, index))
+        label.bind("<Button-1>", lambda event, index=i: rename_image(event, index))
 
         # Position the label in the window
         label.grid(row=row, column=column)
+
+        # Create and display the trash icon label for each image
+        # Replace "trash_icon.png" with the path to your trash icon image
+        trash_icon_image = Image.open("trash_icon.png")
+        trash_icon_image = trash_icon_image.resize((18, 18))  # Resize the trash icon image as desired
+        trash_icon_photo = ImageTk.PhotoImage(trash_icon_image)
+        trash_icon_label = tk.Label(label, image=trash_icon_photo, bg="white")
+        # Keep a reference to the image to prevent it from being garbage collected
+        trash_icon_label.image = trash_icon_photo
+        trash_icon_label.place(relx=0.92, rely=0.05, anchor="ne")
+        trash_icon_label.bind("<Button-1>", lambda event, index=i: delete_image(event, index))
+        disposables.append(trash_icon_label)
 
         # Store the label in a list for later removal
         disposables.append(label)
@@ -93,10 +105,11 @@ def display_page():
     disposables.append(page_label)
 
 
-def rename_image(event, index):
+def rename_image(event, i):
     global image_files
 
-    image_file = image_files[index]
+    index = current_page * num_columns * num_rows + i
+    image_file = image_files[index]  # Get the image file path
 
     # Get the click coordinates relative to the image
     x = event.x
@@ -130,23 +143,17 @@ def rename_image(event, index):
 
 
 def delete_image(event, index):
-    # Remove the image label from the window
-    # event.widget.destroy()
+    # Remove the image label and trash icon label from the window
+    disposables[index].destroy()
+    disposables[index+1].destroy()
 
-    # Rename the image file based on the click coordinates
-    global_index = current_page * num_columns * num_rows + index  # prev pages + index
-    rename_image(event, global_index)
-
-
-# def delete_image(event, image_file):
-#     # Remove the image label from the window
-#     event.widget.destroy()
-#
-#     # Delete the image file from the file system
-#     try:
-#         os.remove(image_file)
-#     except FileNotFoundError:
-#         pass
+    # Delete the image file from the file system
+    image_file = image_files[current_page * num_columns * num_rows + index]  # Get the image file path
+    try:
+        os.remove(image_file)
+        display_page()
+    except FileNotFoundError:
+        pass
 
 
 def on_keypress(event):
