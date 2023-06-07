@@ -13,8 +13,8 @@ tile_width = 224
 tile_height = 224
 
 # Calculate the number of rows and columns
-num_rows = 3
-num_columns = 6
+num_rows = 1
+num_columns = 3
 
 # Calculate the total screen size
 screen_width = num_columns * tile_width
@@ -77,7 +77,7 @@ def display_page():
         label.image = photo  # Keep a reference to the image to prevent it from being garbage collected
 
         # Bind the click event to the label
-        label.bind("<Button-1>", lambda event, file=image_file: delete_image(event, file))
+        label.bind("<Button-1>", lambda event, index=i: delete_image(event, index))
 
         # Position the label in the window
         label.grid(row=row, column=column)
@@ -93,15 +93,60 @@ def display_page():
     disposables.append(page_label)
 
 
-def delete_image(event, image_file):
-    # Remove the image label from the window
-    event.widget.destroy()
+def rename_image(event, index):
+    global image_files
 
-    # Delete the image file from the file system
-    try:
-        os.remove(image_file)
-    except FileNotFoundError:
-        pass
+    image_file = image_files[index]
+
+    # Get the click coordinates relative to the image
+    x = event.x
+    y = event.y
+
+    # Extract the base name and extension from the image file path
+    base_name, extension = os.path.splitext(image_file)
+
+    # Find the index of the last underscore in the base name
+    last_underscore_index = base_name.rfind("_")
+
+    if last_underscore_index != -1:
+        # Extract the part of the base name before the last underscore
+        base_without_coords = base_name[last_underscore_index:]
+
+        # Create the new file name by adding the new coordinates
+        new_filename = f"{x}_{y}{base_without_coords}{extension}"
+
+        # Rename the image file
+        try:
+            new_file_path = os.path.join(image_folder, new_filename)
+            os.rename(image_file, new_file_path)
+
+            # Update the image file path in the image_files list
+            image_files[index] = new_file_path
+
+            # Refresh the displayed page to update the dot position
+            display_page()
+        except FileNotFoundError:
+            print("FileNotFound")
+
+
+def delete_image(event, index):
+    # Remove the image label from the window
+    # event.widget.destroy()
+
+    # Rename the image file based on the click coordinates
+    global_index = current_page * num_columns * num_rows + index  # prev pages + index
+    rename_image(event, global_index)
+
+
+# def delete_image(event, image_file):
+#     # Remove the image label from the window
+#     event.widget.destroy()
+#
+#     # Delete the image file from the file system
+#     try:
+#         os.remove(image_file)
+#     except FileNotFoundError:
+#         pass
 
 
 def on_keypress(event):
