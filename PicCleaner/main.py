@@ -13,8 +13,8 @@ tile_width = 224
 tile_height = 224
 
 # Calculate the number of rows and columns
-num_rows = 3
-num_columns = 6
+num_rows = 1
+num_columns = 1
 
 # Calculate the total screen size
 screen_width = num_columns * tile_width
@@ -30,9 +30,12 @@ current_page = 0
 
 
 def display_page():
+    global disposables
+
     # Clear the previous images and labels
     for element in disposables:
         element.destroy()
+    disposables.clear()
 
     # Calculate the starting and ending index for the current page
     start_index = current_page * (num_rows * num_columns)
@@ -64,9 +67,11 @@ def display_page():
 
             # Convert the image to Tkinter-compatible format
             photo = ImageTk.PhotoImage(image)
+            photo_images.append(photo)  # Add the PhotoImage to the list
         except (OSError, UnidentifiedImageError):
             # Create a black tile if image loading fails
             photo = ImageTk.PhotoImage(Image.new("RGB", (tile_width, tile_height), color="black"))
+            photo_images.append(photo)  # Add the PhotoImage to the list
 
         # Calculate the position of the current tile
         row = i // num_columns
@@ -143,6 +148,8 @@ def rename_image(event, i):
 
 
 def delete_image(event, index):
+    global image_files
+
     # Remove the image label and trash icon label from the window
     disposables[index].destroy()
     disposables[index+1].destroy()
@@ -151,6 +158,7 @@ def delete_image(event, index):
     image_file = image_files[current_page * num_columns * num_rows + index]  # Get the image file path
     try:
         os.remove(image_file)
+        del image_files[current_page * num_columns * num_rows + index]  # Remove the file path from the list
         display_page()
     except FileNotFoundError:
         pass
@@ -176,6 +184,9 @@ window.bind("<Key>", on_keypress)
 
 # List to store image labels and references for later removal
 disposables = []
+
+# List to store PhotoImage references
+photo_images = []
 
 # Display the initial page
 display_page()
