@@ -13,165 +13,166 @@ int plant_identification(int &amp;position) {
 }</declaration>
 	<template>
 		<name>Weeder</name>
-		<location id="id0" x="-518" y="-272">
-			<name x="-528" y="-306">start</name>
+		<location id="id0" x="-11942" y="-578">
+			<name x="-11952" y="-612">start</name>
 		</location>
-		<location id="id1" x="-272" y="-280">
-			<name x="-282" y="-314">find_plant</name>
+		<location id="id1" x="-11670" y="-578">
+			<name x="-11708" y="-616">find_plant</name>
 		</location>
-		<location id="id2" x="-51" y="-297">
-			<name x="-61" y="-331">plant</name>
+		<location id="id2" x="-11670" y="-467">
+			<name x="-11687" y="-442">plant</name>
 		</location>
 		<init ref="id0"/>
 		<transition>
 			<source ref="id2"/>
 			<target ref="id0"/>
-			<label kind="synchronisation" x="-195" y="-153">drive!</label>
-			<nail x="-170" y="-161"/>
-			<nail x="-399" y="-289"/>
+			<label kind="synchronisation" x="-11840" y="-459">drive!</label>
+			<nail x="-11832" y="-467"/>
+			<nail x="-11942" y="-467"/>
 		</transition>
 		<transition>
 			<source ref="id1"/>
 			<target ref="id2"/>
-			<label kind="synchronisation" x="-195" y="-280">eliminate!</label>
-			<nail x="-161" y="-229"/>
+			<label kind="synchronisation" x="-11657" y="-536">eliminate!</label>
+			<nail x="-11670" y="-535"/>
 		</transition>
 		<transition>
 			<source ref="id0"/>
 			<target ref="id1"/>
-			<label kind="synchronisation" x="-484" y="-365">weed_plant_position!</label>
-			<nail x="-399" y="-340"/>
+			<label kind="synchronisation" x="-11891" y="-603">weed_plant_position!</label>
+			<nail x="-11806" y="-578"/>
 		</transition>
 	</template>
 	<template>
 		<name>Protector</name>
-		<location id="id3" x="-646" y="-170">
-			<name x="-656" y="-204">start</name>
+		<location id="id3" x="-739" y="-306">
+			<name x="-749" y="-340">start</name>
 		</location>
-		<location id="id4" x="-408" y="-246">
-			<name x="-418" y="-280">find_plant</name>
+		<location id="id4" x="-348" y="-306">
+			<name x="-358" y="-340">find_plant</name>
 		</location>
-		<location id="id5" x="-68" y="-110">
-			<name x="-78" y="-144">plant</name>
+		<location id="id5" x="-348" y="-85">
+			<name x="-365" y="-64">plant</name>
 		</location>
 		<init ref="id3"/>
 		<transition>
 			<source ref="id5"/>
 			<target ref="id3"/>
-			<label kind="synchronisation" x="-433" y="-59">drive!</label>
-			<nail x="-289" y="0"/>
-			<nail x="-510" y="-119"/>
+			<label kind="synchronisation" x="-729" y="-212">drive!</label>
+			<nail x="-671" y="-85"/>
+			<nail x="-739" y="-85"/>
 		</transition>
 		<transition>
 			<source ref="id4"/>
 			<target ref="id5"/>
-			<label kind="synchronisation" x="-255" y="-221">spray!</label>
-			<nail x="-246" y="-178"/>
+			<label kind="synchronisation" x="-346" y="-206">spray!</label>
+			<nail x="-348" y="-212"/>
 		</transition>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id4"/>
-			<label kind="synchronisation" x="-629" y="-348">infected_plant_position!</label>
+			<label kind="synchronisation" x="-624" y="-335">infected_plant_position!</label>
 			<nail x="-552" y="-306"/>
 		</transition>
 	</template>
 	<template>
 		<name>PlantObserver</name>
-		<location id="id6" x="-688" y="-272">
-			<name x="-698" y="-306">start</name>
+		<location id="id6" x="-357" y="-493">
+			<name x="-367" y="-527">start</name>
 		</location>
-		<location id="id7" x="-255" y="-272">
+		<location id="id7" x="136" y="-280">
 		</location>
-		<location id="id8" x="-85" y="-484">
-			<name x="-95" y="-518">weeder</name>
+		<location id="id8" x="136" y="-493">
+			<name x="161" y="-504">weeder</name>
 		</location>
-		<location id="id9" x="-85" y="-76">
-			<name x="-102" y="-119">protector</name>
+		<location id="id9" x="136" y="-85">
+			<name x="61" y="-120">protector</name>
 		</location>
 		<init ref="id6"/>
 		<transition>
 			<source ref="id9"/>
 			<target ref="id6"/>
-			<label kind="synchronisation" x="-449" y="-93">drive?</label>
-			<nail x="-467" y="-76"/>
+			<label kind="synchronisation" x="-339" y="-102">drive?</label>
+			<nail x="-357" y="-85"/>
 		</transition>
 		<transition>
 			<source ref="id8"/>
 			<target ref="id6"/>
-			<label kind="synchronisation" x="-449" y="-501">drive?</label>
-			<nail x="-467" y="-484"/>
+			<label kind="synchronisation" x="-121" y="-517">drive?</label>
+			<nail x="-76" y="-493"/>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id6"/>
-			<label kind="guard" x="-93" y="-297">plant_type == 1</label>
-			<label kind="synchronisation" x="-59" y="-272">drive?</label>
-			<nail x="161" y="-272"/>
-			<nail x="161" y="17"/>
-			<nail x="-467" y="17"/>
+			<label kind="guard" x="162" y="-175">plant_type == 1</label>
+			<label kind="synchronisation" x="233" y="-97">drive?</label>
+			<nail x="280" y="-280"/>
+			<nail x="280" y="-25"/>
+			<nail x="-433" y="-25"/>
+			<nail x="-433" y="-493"/>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id9"/>
-			<label kind="synchronisation" x="-212" y="-195">infected_plant_position?</label>
+			<label kind="synchronisation" x="-46" y="-230">infected_plant_position?</label>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id8"/>
-			<label kind="synchronisation" x="-229" y="-408">weed_plant_position?</label>
+			<label kind="synchronisation" x="68" y="-425">weed_plant_position?</label>
 		</transition>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id7"/>
-			<label kind="synchronisation" x="-383" y="-297">identify!</label>
-			<nail x="-357" y="-272"/>
+			<label kind="synchronisation" x="8" y="-306">identify!</label>
+			<nail x="0" y="-280"/>
 		</transition>
 	</template>
 	<template>
 		<name>Track</name>
-		<location id="id10" x="-2711" y="-935">
+		<location id="id10" x="-2694" y="-935">
 		</location>
-		<location id="id11" x="-2550" y="-935">
-			<name x="-2575" y="-969">observe</name>
+		<location id="id11" x="-2550" y="-1173">
+			<name x="-2609" y="-1213">observe</name>
 		</location>
 		<location id="id12" x="-1895" y="-935">
 			<name x="-1955" y="-977">identifying_plant</name>
 		</location>
-		<location id="id13" x="-1895" y="-1181">
-			<name x="-1905" y="-1215">weed_plant</name>
+		<location id="id13" x="-1895" y="-1130">
+			<name x="-1905" y="-1164">weed_plant</name>
 		</location>
-		<location id="id14" x="-1895" y="-688">
-			<name x="-1904" y="-671">infected_plant</name>
+		<location id="id14" x="-1895" y="-756">
+			<name x="-1904" y="-739">infected_plant</name>
 		</location>
-		<location id="id15" x="-1470" y="-935">
-			<name x="-1445" y="-943">healthy_plant</name>
+		<location id="id15" x="-1615" y="-935">
+			<name x="-1666" y="-909">healthy_plant</name>
 		</location>
 		<location id="id16" x="-2235" y="-935">
 		</location>
 		<location id="id17" x="-2380" y="-935">
-			<name x="-2397" y="-969">plant</name>
+			<name x="-2397" y="-918">plant</name>
 		</location>
 		<init ref="id10"/>
 		<transition>
 			<source ref="id13"/>
 			<target ref="id11"/>
-			<label kind="synchronisation" x="-2532" y="-1198">drive?</label>
-			<nail x="-2550" y="-1181"/>
+			<label kind="synchronisation" x="-2294" y="-1045">drive?</label>
+			<nail x="-2295" y="-1130"/>
 		</transition>
 		<transition>
 			<source ref="id15"/>
 			<target ref="id11"/>
-			<label kind="synchronisation" x="-2532" y="-1411">drive?</label>
-			<nail x="-1470" y="-1394"/>
-			<nail x="-2550" y="-1394"/>
+			<label kind="synchronisation" x="-1759" y="-1207">drive?</label>
+			<nail x="-1615" y="-1224"/>
+			<nail x="-2312" y="-1224"/>
 		</transition>
 		<transition>
 			<source ref="id14"/>
 			<target ref="id11"/>
-			<label kind="synchronisation" x="-1877" y="-705">drive?</label>
-			<nail x="-1105" y="-688"/>
-			<nail x="-1105" y="-1411"/>
-			<nail x="-2550" y="-1411"/>
+			<label kind="synchronisation" x="-1697" y="-782">drive?</label>
+			<nail x="-1564" y="-756"/>
+			<nail x="-1564" y="-1258"/>
+			<nail x="-2550" y="-1258"/>
 		</transition>
 		<transition>
 			<source ref="id17"/>
@@ -193,8 +194,8 @@ int plant_identification(int &amp;position) {
 		<transition>
 			<source ref="id12"/>
 			<target ref="id14"/>
-			<label kind="guard" x="-1955" y="-824">plant_type == 2</label>
-			<label kind="synchronisation" x="-1921" y="-799">spray?</label>
+			<label kind="guard" x="-1888" y="-866">plant_type == 2</label>
+			<label kind="synchronisation" x="-1945" y="-829">spray?</label>
 		</transition>
 		<transition>
 			<source ref="id12"/>
@@ -206,63 +207,63 @@ int plant_identification(int &amp;position) {
 		<transition>
 			<source ref="id12"/>
 			<target ref="id13"/>
-			<label kind="guard" x="-1938" y="-1113">plant_type == 0</label>
-			<label kind="synchronisation" x="-1929" y="-1088">eliminate?</label>
+			<label kind="guard" x="-1888" y="-1062">plant_type == 0</label>
+			<label kind="synchronisation" x="-1974" y="-1020">eliminate?</label>
 		</transition>
 		<transition>
 			<source ref="id11"/>
 			<target ref="id11"/>
-			<label kind="synchronisation" x="-2567" y="-791">drive?</label>
-			<nail x="-2456" y="-799"/>
-			<nail x="-2635" y="-799"/>
+			<label kind="synchronisation" x="-2706" y="-1115">drive?</label>
+			<nail x="-2694" y="-1207"/>
+			<nail x="-2694" y="-1122"/>
 		</transition>
 		<transition>
 			<source ref="id10"/>
 			<target ref="id11"/>
 			<label kind="synchronisation" x="-2643" y="-960">drive?</label>
-			<nail x="-2567" y="-935"/>
+			<nail x="-2550" y="-935"/>
 		</transition>
 	</template>
 	<template>
 		<name x="5" y="5">Car</name>
 		<declaration>// Place local declarations here.
 clock wait;</declaration>
-		<location id="id18" x="-3553" y="-1266">
-			<name x="-3563" y="-1300">idle</name>
+		<location id="id18" x="-3510" y="-1266">
+			<name x="-3520" y="-1300">idle</name>
 		</location>
-		<location id="id19" x="-3255" y="-1266">
-			<name x="-3281" y="-1300">observe</name>
+		<location id="id19" x="-3264" y="-1266">
+			<name x="-3330" y="-1296">observe</name>
 		</location>
-		<location id="id20" x="-2975" y="-1266">
-			<name x="-3026" y="-1300">detect_plant</name>
+		<location id="id20" x="-3034" y="-1266">
+			<name x="-3085" y="-1300">detect_plant</name>
 		</location>
-		<location id="id21" x="-2728" y="-1266">
+		<location id="id21" x="-2881" y="-1266">
 		</location>
 		<init ref="id18"/>
 		<transition>
 			<source ref="id21"/>
 			<target ref="id19"/>
-			<label kind="synchronisation" x="-3026" y="-1445">drive!</label>
+			<label kind="synchronisation" x="-3094" y="-1445">drive!</label>
 			<nail x="-2881" y="-1445"/>
-			<nail x="-3145" y="-1445"/>
+			<nail x="-3264" y="-1445"/>
 		</transition>
 		<transition>
 			<source ref="id20"/>
 			<target ref="id21"/>
-			<label kind="synchronisation" x="-2873" y="-1300">stop!</label>
+			<label kind="synchronisation" x="-2925" y="-1334">stop!</label>
 		</transition>
 		<transition>
 			<source ref="id19"/>
 			<target ref="id19"/>
-			<label kind="synchronisation" x="-3272" y="-1096">drive!</label>
-			<label kind="assignment" x="-3322" y="-1189">position ++</label>
-			<nail x="-3340" y="-1113"/>
-			<nail x="-3162" y="-1113"/>
+			<label kind="synchronisation" x="-3282" y="-1109">drive!</label>
+			<label kind="assignment" x="-3301" y="-1198">position ++</label>
+			<nail x="-3349" y="-1113"/>
+			<nail x="-3171" y="-1113"/>
 		</transition>
 		<transition>
 			<source ref="id19"/>
 			<target ref="id20"/>
-			<label kind="synchronisation" x="-3145" y="-1292">detect!</label>
+			<label kind="synchronisation" x="-3155" y="-1293">detect!</label>
 		</transition>
 		<transition>
 			<source ref="id18"/>
