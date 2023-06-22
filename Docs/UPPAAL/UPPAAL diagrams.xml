@@ -2,7 +2,7 @@
 <!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
 <nta>
 	<declaration>// Place global declarations here.
-chan drive, stop, detect, identify, weed_plant_position, eliminate, spray, infected_plant_position;
+chan drive, stop, detect, identify, weed_plant_position, eliminate, spray, infected_plant_position, finished;
 
 int plant_type = 0;
 int position = 0;
@@ -26,7 +26,7 @@ int plant_identification(int &amp;position) {
 		<transition>
 			<source ref="id2"/>
 			<target ref="id0"/>
-			<label kind="synchronisation" x="-11840" y="-459">drive!</label>
+			<label kind="synchronisation" x="-11840" y="-459">finished?</label>
 			<nail x="-11832" y="-467"/>
 			<nail x="-11942" y="-467"/>
 		</transition>
@@ -92,20 +92,20 @@ int plant_identification(int &amp;position) {
 		<transition>
 			<source ref="id9"/>
 			<target ref="id6"/>
-			<label kind="synchronisation" x="-339" y="-102">drive?</label>
+			<label kind="synchronisation" x="-339" y="-102">drive!</label>
 			<nail x="-357" y="-85"/>
 		</transition>
 		<transition>
 			<source ref="id8"/>
 			<target ref="id6"/>
-			<label kind="synchronisation" x="-121" y="-517">drive?</label>
+			<label kind="synchronisation" x="-121" y="-517">finished!</label>
 			<nail x="-76" y="-493"/>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id6"/>
-			<label kind="guard" x="162" y="-175">plant_type == 1</label>
-			<label kind="synchronisation" x="233" y="-97">drive?</label>
+			<label kind="guard" x="170" y="-150">plant_type == 1</label>
+			<label kind="synchronisation" x="195" y="-302">drive!</label>
 			<nail x="280" y="-280"/>
 			<nail x="280" y="-25"/>
 			<nail x="-433" y="-25"/>
@@ -114,12 +114,14 @@ int plant_identification(int &amp;position) {
 		<transition>
 			<source ref="id7"/>
 			<target ref="id9"/>
+			<label kind="guard" x="77" y="-196">plant_type == 2</label>
 			<label kind="synchronisation" x="-46" y="-230">infected_plant_position?</label>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id8"/>
-			<label kind="synchronisation" x="68" y="-425">weed_plant_position?</label>
+			<label kind="guard" x="85" y="-389">plant_type == 0</label>
+			<label kind="synchronisation" x="63" y="-356">weed_plant_position?</label>
 		</transition>
 		<transition>
 			<source ref="id6"/>
@@ -250,7 +252,7 @@ clock wait;</declaration>
 		<transition>
 			<source ref="id20"/>
 			<target ref="id21"/>
-			<label kind="synchronisation" x="-2925" y="-1334">stop!</label>
+			<label kind="synchronisation" x="-2977" y="-1292">stop!</label>
 		</transition>
 		<transition>
 			<source ref="id19"/>
